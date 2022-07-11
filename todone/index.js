@@ -1,7 +1,14 @@
 
+const lists = document.querySelectorAll('.list-name')
 
-const li = document.getElementsByClassName('list-name')
-li.addEventListener('click', () => {
-    console.log('click');
-})
+lists.forEach(li => {
+    li.addEventListener('click', (e)=>{
+      li.id = 'active-list';
+    })
+    // li.addEventListener('click', (e)=>{
+    //     li.id = null;
+    //   })
+});
+
   
+
