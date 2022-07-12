@@ -1,3 +1,5 @@
+import EachList from "./EachList";
+import AddList from "./AddList";
 
 function Left(){
     function handleAddList(e){
@@ -7,21 +9,20 @@ function Left(){
     return(
         <div className="left">
         <div className="list-container">
+            
             <div className="task-list-title">
                 <h3>My Lists</h3>
             </div>
-            <ul className="task-lists" >
-                <li className="list-name">Grocery</li>
-                <li className="list-name">Home Chores</li>
-                <li className="list-name">Long Term</li><br/>
-            </ul>
-            <form action="">
+            
+            <EachList />
+            <AddList handleAddList={handleAddList}/>
+            {/* <form action="">
                 <input 
                 type="text"
                 className="new-list"
                 placeholder="new list name"/>
                 <button className="plus-button" onClick={handleAddList}>+</button>
-            </form>
+            </form> */}
         </div>
     </div>
     )
