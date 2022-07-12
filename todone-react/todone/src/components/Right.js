@@ -1,16 +1,10 @@
-import { useState } from "react";
+
 
 import TodoList from "./TodoList";
 
 function Right(){
-  const [value, setValue] = useState('')
+//   const [value, setValue] = useState('')
 
-   
-    function handleAddnewItem(){
-        // e.preventDefault()
-        
-     
-    }
  
 return(
 

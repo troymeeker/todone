@@ -1,30 +1,36 @@
 import React, {useState} from 'react'
-// import TodoForm from './TodoForm'
+import TodoForm from './TodoForm'
 
-function Todo({tasks, completeTask, removeTask}) {
+
+function Todo({tasks, completeTask, removeTask, updateTask}) {
     const [edit, setEdit] = useState({
-        id:null, 
+        id: null, 
         value: ''
-    })
+    });
 
-    // function removeTask(id){
-    //     console.log( );
-        
-    // }
+
+    const submitUpdate = value => {
+        updateTask(edit.id, value)
+        setEdit({
+            id: null, 
+            value: ''
+        });
+     };
+
+     if(edit.id){
+         return <TodoForm edit={edit} onSubmit={submitUpdate} />;
+     }
+    
 
 
   return tasks.map((task, index) => (
     <div className={task.isComplete ? 'complete' : 'todo-row' } key={index}
     >
-        <div key={task.id} onClick={ ()=> completeTask(task.id)} className="item">
+        <div key={task.id} onClick={ () => completeTask(task.id)} className="item">
         <span className="custom-checkbox"></span>{task.text} 
-        <button onClick={() => removeTask(task.id)}>remove</button>
-        <button onClick={() => {
-            setEdit({
-                id: task.id,
-                value:task.text
-            })
-        }}> Edit </button>
+        <button  className='edit-del-buttons' onClick={() => removeTask(task.id)} >remove</button>
+        <button  className='edit-del-buttons'onClick={() => setEdit({id: task.id, value: task.text })}
+        > Edit </button>
         </div>
 
 

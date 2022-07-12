@@ -16,12 +16,22 @@ function TodoList() {
         setTasks(newTasks);
         // console.log(...tasks);
     }
-  
-    function removeTask(id){
-        const removeArr = [...tasks].filter(task => task.id !== id)
-        setTasks(removeArr);
+    function updateTask(todoId, newValue ){
+        if(!newValue.text || /^\s*$/.test(newValue.text)){
+            return;
+        }
+        setTasks((prev) => prev.map(item => item.id === todoId ? 
+            newValue : item  ))
     }
 
+    function removeTask(id){
+        const removedArr = tasks.filter((task) => task.id !== id);
+        setTasks(removedArr);
+    }
+
+    
+
+    
     function completeTask(id){
         let updatedTasks = tasks.map((task) => {
             if(task.id === id){
@@ -37,7 +47,12 @@ function TodoList() {
     <div> 
             
        
-        <Todo tasks={tasks} completeTask={completeTask} removeTask={removeTask}/>
+        <Todo 
+            tasks={tasks}
+            completeTask={completeTask}
+            removeTask={removeTask} 
+            updateTask={updateTask}
+       />
         <TodoForm onSubmit={addTask} />
         
 </div>
