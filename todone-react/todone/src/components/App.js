@@ -1,6 +1,7 @@
-import './App.css';
+
 import Left from './Left';
 import Right from './Right';
+import '../styles.css';
 
 function App() {
   return (

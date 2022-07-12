@@ -1,10 +1,10 @@
-import EachList from "./EachList";
+import TodoList from "./TodoList";
 import AddList from "./AddList";
 
 function Left(){
     function handleAddList(e){
         e.preventDefault();
-        console.log('new list');
+        console.log(e.target.value);
     }
     return(
         <div className="left">
@@ -14,15 +14,9 @@ function Left(){
                 <h3>My Lists</h3>
             </div>
             
-            <EachList />
+            <TodoList />
             <AddList handleAddList={handleAddList}/>
-            {/* <form action="">
-                <input 
-                type="text"
-                className="new-list"
-                placeholder="new list name"/>
-                <button className="plus-button" onClick={handleAddList}>+</button>
-            </form> */}
+          
         </div>
     </div>
     )

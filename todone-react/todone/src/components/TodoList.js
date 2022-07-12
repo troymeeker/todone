@@ -1,4 +1,4 @@
-// import { useState } from "react";
+
 
 function EachList(){
     // const [lists, setLists] = useState([])
@@ -9,9 +9,9 @@ function EachList(){
     return(
         <div>
             <ul className="task-lists" >
-                <li className="list-name">Grocery</li>
-                <li className="list-name">Home Chores</li>
-                <li className="list-name">Long Term</li><br/>
+                <li className="list-name">List 1</li>
+                <li className="list-name">List 2</li>
+                <li className="list-name">List 3</li><br/>
             </ul>
         </div>
     )
