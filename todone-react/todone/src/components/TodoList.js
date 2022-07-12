@@ -27,6 +27,8 @@ function TodoList() {
     function removeTask(id){
         const removedArr = tasks.filter((task) => task.id !== id);
         setTasks(removedArr);
+
+        console.log(removedArr);
     }
 
     
@@ -44,7 +46,7 @@ function TodoList() {
     }
  
   return (
-    <div> 
+    <div > 
             
        
         <Todo 
@@ -55,7 +57,7 @@ function TodoList() {
        />
         <TodoForm onSubmit={addTask} />
         
-</div>
+    </div>
   )
 }
 

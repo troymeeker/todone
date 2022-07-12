@@ -3,6 +3,7 @@ import TodoForm from './TodoForm'
 
 
 function Todo({tasks, completeTask, removeTask, updateTask}) {
+    
     const [edit, setEdit] = useState({
         id: null, 
         value: ''
@@ -28,7 +29,7 @@ function Todo({tasks, completeTask, removeTask, updateTask}) {
     >
         <div key={task.id} onClick={ () => completeTask(task.id)} className="item">
         <span className="custom-checkbox"></span>{task.text} 
-        <button  className='edit-del-buttons' onClick={() => removeTask(task.id)} >remove</button>
+        <button  className='edit-del-buttons' onClick={() => removeTask(task.id)} >X</button>
         <button  className='edit-del-buttons'onClick={() => setEdit({id: task.id, value: task.text })}
         > Edit </button>
         </div>
