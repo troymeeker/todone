@@ -48,11 +48,10 @@
 
 .right{
   height: 100vh;
-  width: 65%;
+  /* width: ; */
   background-color: rgb(165, 172, 172);
-  position: absolute;
-  right: -10px;
- 
+
+  
 }
 
 
@@ -65,26 +64,16 @@
 
   color:inherit;
   font-size: 1.25rem;
-  transition: transform .7s ease-in-out;
+  /* transition: transform .7s ease-in-out; */
 
 }
 .plus-button:hover{
-  opacity: .5;
-  transform: rotate(90deg) ;
-  transform-origin: center;
+  opacity: .6;
+  position: relative;
+  bottom:-1px;
 }
 
 
-.task-count{
-  font-size: 13px;
-  margin: auto;
-}
-
-.each-task{
-padding: 3px;
-position: relative;
-
-}
 
 .item{
   margin-left: 4px;
@@ -141,36 +130,6 @@ position: relative;
 
 }
 
-.each-task label{
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-}
-
-.each-task::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: -.15em;
-  height: 1px;
-  
-  background: currentColor;
-  opacity: 0.3;
-}
-.each-task label::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  left: 0;
-  left:1.5em;
-  height: 1px;
-  
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 150ms ease-in-out;
-}
 
 [type='checkbox']:checked + label::after{
   transform: scaleX(1);
@@ -189,9 +148,7 @@ position: relative;
   transition: transform 400ms ease-in-out ;
 
 }
-.each-task:hover .custom-checkbox{
-  transform: scale(1.25);
-}
+
 .list-name:hover{
   font-weight: bold;
 }
@@ -206,41 +163,3 @@ position: relative;
   
 }
 
-
-.clear-button{
-  background-color: rgb(164, 103, 103);
-  margin: 10px;
-  padding: 5px;
-  border: 0;
-  border-radius: 5px;
-  margin-left: 25px;
-}
-.clear-button:hover{
-  opacity: .5;
-  background-color: rgb(164, 103, 103);
-}
-.del-button{
-  background-color: rgb(146, 146, 216);
-  margin: 10px;
-  padding: 5px;
-  border: 0;
-  border-radius: 5px;
-
-
-}
-.del-button:hover{
-  opacity: .5;
-  background-color: rgb(146, 146, 216);
-}
-.task-bar{
-  margin-left: 20px;
-
-  
-}
- .delete-stuff{
-  display: flex;
-  justify-content: space-evenly;
-  position: relative;
-  right: 10px;
-  
- }

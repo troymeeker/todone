@@ -1,5 +1,5 @@
 
-import Left from './Left';
+// import Left from './Left';
 import Right from './Right';
 import '../styles.css';
 
@@ -9,7 +9,7 @@ function App() {
 
       <h1 className="page-title">ToDone</h1>
 
-      <Left/>
+      {/* <Left/> */}
 
       <Right/>
 

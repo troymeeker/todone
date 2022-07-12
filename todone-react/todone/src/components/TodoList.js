@@ -1,20 +1,47 @@
+import React, {useState} from 'react'
+import TodoForm from './TodoForm'
+import Todo from './Todo';
 
+function TodoList() {
+    const [tasks, setTasks] = useState([]);
 
-function EachList(){
-    // const [lists, setLists] = useState([])
+    function addTask(task){
 
-    // const lists = lists.map(
-    //     //for each list element, make a new li 
-    // )
-    return(
-        <div>
-            <ul className="task-lists" >
-                <li className="list-name">List 1</li>
-                <li className="list-name">List 2</li>
-                <li className="list-name">List 3</li><br/>
-            </ul>
-        </div>
-    )
+        if(!task.text || /^\s*$/.test(task.text)){
+            return;
+        }
+
+        const newTasks = [task, ...tasks];
+
+        setTasks(newTasks);
+        // console.log(...tasks);
+    }
+  
+    function removeTask(id){
+        const removeArr = [...tasks].filter(task => task.id !== id)
+        setTasks(removeArr);
+    }
+
+    function completeTask(id){
+        let updatedTasks = tasks.map((task) => {
+            if(task.id === id){
+                task.isComplete = !task.isComplete
+            }
+            return task
+        })
+        setTasks(updatedTasks);
+    
+    }
+ 
+  return (
+    <div> 
+            
+       
+        <Todo tasks={tasks} completeTask={completeTask} removeTask={removeTask}/>
+        <TodoForm onSubmit={addTask} />
+        
+</div>
+  )
 }
 
-export default EachList;
+export default TodoList
