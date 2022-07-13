@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-function TodoForm(props) {
+function TodoForm({ tasks, setTasks}) {
+ 
     const [input, setInput] = useState('')
 
     function handleChange(e){
@@ -12,12 +13,14 @@ function TodoForm(props) {
     function handleSubmit(e){
         e.preventDefault();
 
-        props.onSubmit({
+       const newTodo = ({
             id: Math.floor(Math.random() * 1000),
-            text:input
+            text:input, 
+            completed:false
         })
 
         setInput('');
+        setTasks([...tasks,].concat(newTodo)); 
     }
     
   return (

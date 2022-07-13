@@ -76,21 +76,25 @@
   position: relative;
   bottom:-1px;
 }
-/* .edit-del-buttons{
-  margin-left: 4px;
-} */
+
 
 
 
 .item{
-  margin-left: 4px;
+  margin-left: 5px;
+}
+.edit-del-buttons{
+  margin-left: 5px;
+  border-radius: 5px;
+  border: 0;
+}
+.edit-del-buttons:hover{
+  background-color: rgb(103, 98, 93);
+  color: rgb(209, 209, 202);
+ 
 }
 
 .todo-app{
-
-
-   
-  
     height: 40vh;
     width: 40vw;
    
@@ -136,6 +140,7 @@
 
 .new-list:focus{
   border-bottom-width: 2px;
+  border: 0;
 }
 
 
