@@ -66,6 +66,11 @@ font-weight: 500;
   background:  rgba(174, 158, 108);;
   border:none;
 }
+.task-input-edit{
+  background:  rgb(228, 220, 199);;
+  border:none;
+
+}
 
 .current-header{
   
@@ -83,9 +88,22 @@ font-weight: 500;
   margin: 10px;
 
  }
+ .task-list{
+  /* border: 1px solid black;
+  
+  width: 200px; */
+  display: flex;
+  justify-content: center;
+
+ }
  
-.complete{
+/* .complete{
   color:red;
+
+
+} */
+p::selection{
+  color: red;
 }
 
 

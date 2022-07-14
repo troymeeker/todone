@@ -51,16 +51,16 @@ function TodoList() {
     
     }
 
-    function toggleComplete(id){
-        const updatedTasks = [...tasks].map(() => {
-            if(task.id === id){
-                task.completed = !task.completed
-            }
-            return task
-        })
+    // function toggleComplete(id){
+    //     const updatedTasks = [...tasks].map(() => {
+    //         if(task.id === id){
+    //             task.completed = !task.completed
+    //         }
+    //         return task
+    //     })
 
-        setTasks(updatedTasks)
-    }
+    //     setTasks(updatedTasks)
+    // }
     function editTask(id){
         const newTasks = [...tasks].map((task) => {
             if(task.id === id){
@@ -73,6 +73,7 @@ function TodoList() {
         setEditText('')
         
     }
+   
  
   return (
     <div > 
@@ -82,11 +83,13 @@ function TodoList() {
             <button type='submit' className='plus-button'>+</button>
 
         </form>
+        <div className='task-list'> 
        
         {tasks.map((task) => (
             <div key={task.id} onChange={ () => completeTask(task.id)} className="item" value={task}>
       
             {edit === task.id ? <input 
+                 className='task-input-edit'
                 type='text' 
                 onChange={(e) => setEditText(e.target.value)} 
                 value={editText}
@@ -95,19 +98,25 @@ function TodoList() {
              
 
               <button  className='edit-del-buttons' onClick={() => removeTask(task.id)} > x </button>
-                 <input 
+                 
+                 {/* <input 
                     type='checkbox' 
-                     onChange={() => toggleComplete(task.id)}
-                     checked={task.completed}
-
+                    onChange={() => toggleComplete(task.id)}
+                    checked={task.completed}
+                   
                  />
+                 
+                 { task.completed ?  <div>done</div> :<div>check</div>} */}
+                 
                 {task.id === edit ?     
-                    <button onClick={() => editTask(task.id)}>Confirm Edit</button>
+                    <button onClick={() => editTask(task.id)}  className='edit-del-buttons'>Confirm </button>
                      : 
-                    <button onClick={() => setEdit(task.id)}>Edit Task</button>  }
+                    <button onClick={() => setEdit(task.id)}  className='edit-del-buttons'>Edit </button>  }
                 
             </div>
+
          ))}
+           </div>
     </div>
   )
 }
