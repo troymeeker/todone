@@ -11,7 +11,7 @@ function App() {
 
       {/* <Left/> */}
 
-      <Right/>
+      <Right />
 
   </div>
     

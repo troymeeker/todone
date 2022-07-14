@@ -1,25 +1,37 @@
-import React, {useState} from 'react'
-
+import React, { useState, useEffect} from 'react';
 
 function TodoList() {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')));
     const [task, setTask] = useState('')
     const [edit, setEdit] = useState(null)
     const [editText, setEditText] = useState('')
+
+    useEffect(() => {
+        const taskData = JSON.parse(localStorage.getItem('tasks'))
+        if(taskData){
+            setTasks(taskData)
+        }
+    },[])
+
+
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(tasks))
+
+    },[tasks])
     
 
-function handleSubmit(e){
-e.preventDefault();
+    function handleSubmit(e){
+      e.preventDefault();
 
-const newTodo = {
-    id: Math.floor(Math.random() * 1000),
-    text: task, 
-    completed: false
-}
-setTask('')
-setTasks([...tasks].concat(newTodo))
+     const newTodo = {
+        id: Math.floor(Math.random() * 1000),
+        text: task, 
+        completed: false
+     }
+        setTask('')
+        setTasks([...tasks].concat(newTodo))
 
-}
+    }
 
 
     function removeTask(id){
@@ -66,8 +78,8 @@ setTasks([...tasks].concat(newTodo))
     <div > 
      
         <form onSubmit={handleSubmit}>
-            <input type='text' onChange={(e)=> setTask(e.target.value)} value={task}/>
-            <button type='submit'>submit</button>
+            <input type='text' required onChange={(e)=> setTask(e.target.value)} value={task} className='task-input'/>
+            <button type='submit' className='plus-button'>+</button>
 
         </form>
        
@@ -78,7 +90,7 @@ setTasks([...tasks].concat(newTodo))
                 type='text' 
                 onChange={(e) => setEditText(e.target.value)} 
                 value={editText}
-              /> : <div>{task.text}</div> }
+              /> : <p className={task.completed ? 'complete' : 'task-text' }>{task.text}</p> }
               
              
 
@@ -86,7 +98,7 @@ setTasks([...tasks].concat(newTodo))
                  <input 
                     type='checkbox' 
                      onChange={() => toggleComplete(task.id)}
-                    checked={task.completed}
+                     checked={task.completed}
 
                  />
                 {task.id === edit ?     
@@ -100,4 +112,4 @@ setTasks([...tasks].concat(newTodo))
   )
 }
 
-export default TodoList
+export default TodoList;
