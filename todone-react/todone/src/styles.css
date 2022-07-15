@@ -5,7 +5,7 @@
 
 }
 .body{
- background-color: rgb(74, 122, 106);
+ background-color: rgb(94, 105, 101);
 
 
 }
@@ -23,7 +23,7 @@
 .right{
   height: 100vh;
   width: 100vw;
-  background-color: rgb(165, 172, 172);
+  background-color: rgb(135, 158, 158);
 }
 
 .task-text{
@@ -46,10 +46,11 @@ font-weight: 500;
 }
 
 .todo-app{
-    height: 40vh;
+    height: fit-content;
+    min-height: 35vh;
     width: 40vw;
    
-    background-color: rgba(215, 196, 128, 0.7);
+    background-color: rgba(195, 193, 147, 0.7);
     text-align: center;
     margin-left: 33%;
     margin-top: 4%;
@@ -63,7 +64,7 @@ font-weight: 500;
   border: 0;
 }
 .task-input{
-  background:  rgba(174, 158, 108);;
+  background:  rgb(223, 204, 146);;
   border:none;
 }
 .task-input-edit{
@@ -86,15 +87,18 @@ font-weight: 500;
   padding: 2px;
   
   margin: 10px;
+ 
 
  }
  .task-list{
-  /* border: 1px solid black;
+   /* border: 1px solid black; */
   
-  width: 200px; */
+ height: fit-content;
   display: flex;
   justify-content: center;
+ flex-direction: column;
 
+  border-radius: 20px;
  }
  
 /* .complete{
