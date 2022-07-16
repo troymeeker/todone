@@ -6,8 +6,8 @@ return(
 
    <div className="right">
     <div className="todo-app">
-        <div>
-            <h2 className="current-header">Current List</h2>
+        <div  className="current-header">
+            <h2>Current List</h2>
         </div>
         <div className="list-tasks">
             <TodoList />
