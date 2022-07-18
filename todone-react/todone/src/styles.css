@@ -5,7 +5,7 @@
 
 }
 .body{
- background-color: rgb(94, 105, 101);
+ background-color: rgb(78, 96, 90);
 
 
 }
@@ -26,7 +26,7 @@ margin-left: 25px;
 .right{
   height: 100vh;
   width: 100vw;
-  background-color: rgb(135, 158, 158);
+  background-color: rgb(54, 64, 64);
 /* display: flex;
 align-items: center; */
 
@@ -38,16 +38,21 @@ font-weight: 500;
 
 
 .item{
-  margin-left: 5px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+
 }
 .edit-del-buttons{
   margin-left: 5px;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 0;
+  background-color: rgb(203, 211, 217);
+  
 }
 .edit-del-buttons:hover{
-  background-color: rgb(103, 98, 93);
-  color: rgb(209, 209, 202);
+  background-color: rgb(87, 85, 81);
+  color: rgb(230, 230, 213);
  
 }
 
@@ -56,7 +61,7 @@ font-weight: 500;
     min-height: 35vh;
     width: 40vw;
    
-    background-color: rgba(195, 193, 147, 0.7);
+    background-color: rgba(215, 215, 167, 0.7);
     text-align: center;
     margin-left: 33%;
     margin-top: 4%;
@@ -72,8 +77,9 @@ font-weight: 500;
   border: 0;
 }
 .task-input{
-  background:  rgb(223, 204, 146);;
+  background:  rgb(204, 204, 201);;
   border:none;
+  padding: 2px;
 }
 .task-input-edit{
   background:  rgb(228, 220, 199);;
@@ -102,9 +108,7 @@ font-weight: 500;
    /* border: 1px solid black; */
   
  height: fit-content;
-  /* display: flex;
-  justify-content: center;
- flex-direction: column; */
+ 
 
   border-radius: 20px;
  }

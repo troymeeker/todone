@@ -95,24 +95,16 @@ function TodoList() {
                 value={editText}
               /> : <p className={task.completed ? 'complete' : 'task-text' }>{task.text}</p> }
               
-             
-
-              <button  className='edit-del-buttons' onClick={() => removeTask(task.id)} > x </button>
-                 
-                 {/* <input 
-                    type='checkbox' 
-                    onChange={() => toggleComplete(task.id)}
-                    checked={task.completed}
-                   
-                 />
-                 
-                 { task.completed ?  <div>done</div> :<div>check</div>} */}
-                 
-                {task.id === edit ?     
-                    <button onClick={() => editTask(task.id)}  className='edit-del-buttons'>Confirm </button>
+              {task.id === edit ?     
+                    <button onClick={() => editTask(task.id)}  className='edit-del-buttons'>CONFIRM </button>
                      : 
-                    <button onClick={() => setEdit(task.id)}  className='edit-del-buttons'>Edit </button>  }
+                    <button onClick={() => setEdit(task.id)}  className='edit-del-buttons'>EDIT </button>  }
                 
+
+              <button  className='edit-del-buttons' onClick={() => removeTask(task.id)} > DELETE </button>
+                 
+                
+           
             </div>
 
          ))}
